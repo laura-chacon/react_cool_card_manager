@@ -99,23 +99,28 @@ class ConnectedForm extends Component {
         const id = uuidv1();
         this.props.addCard({ title, id, description, imageUrl });
     }
-    this.setState({ id: "", title: "", description: "", imageUrl: "" });
+    this.setState({id: null, title: '', description: '', imageUrl: ''})
     this.props.closeModal()
   }
 
   componentWillReceiveProps(nextProps) {
-    let {id, title, description, imageUrl} = nextProps.card;
-    if(!R.equals(id, this.state.id)) {
-        this.setState({id: this.state.id})
+    if(nextProps.addingCard) {
+      this.setState({id: null, title: '', description: '', imageUrl: ''})
     }
-    if(!R.equals(title, this.state.title)) {
-        this.setState({title: this.state.title})
-    }
-    if(!R.equals(description, this.state.description)) {
-        this.setState({description: this.state.description})
-    }
-    if(!R.equals(imageUrl, this.state.imageUrl)) {
-        this.setState({imageUrl: this.state.imageUrl})
+    else {
+      let { id, title, description, imageUrl } = nextProps.card;
+      if(!R.equals(id, this.state.id)) {
+          this.setState({id: nextProps.card.id})
+      }
+      if(!R.equals(title, this.state.title)) {
+          this.setState({title: this.state.title})
+      }
+      if(!R.equals(description, this.state.description)) {
+          this.setState({description: this.state.description})
+      }
+      if(!R.equals(imageUrl, this.state.imageUrl)) {
+          this.setState({imageUrl: this.state.imageUrl})
+      }
     }
   }
 

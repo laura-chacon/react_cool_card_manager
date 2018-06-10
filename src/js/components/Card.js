@@ -74,7 +74,6 @@ class ConnectedCard extends Component {
   }
 
   render() {
-    console.log('this.props', this.props)
     const { title, description, imageUrl } = this.props.card;
     let url = imageUrl
     if(R.isEmpty(imageUrl)) {
@@ -90,7 +89,7 @@ class ConnectedCard extends Component {
           title={title}
           style={{height: 0, paddingBottom: '56.25%'}}
         >
-            <img src={url} style={{width: '100%'}}/>
+            <img src={url} style={{width: '100%', height: 175}}/>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">

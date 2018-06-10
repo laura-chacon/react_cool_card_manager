@@ -14,8 +14,11 @@ const rootReducer = (state = initialState, action) => {
     case REMOVE_CARD:
       return { ...state, cards: R.reject(R.equals(action.payload), state.cards) };
     case EDIT_CARD:
-      console.log('payload', action.payload)
-      return {};
+      let indexToEdit = R.findIndex((card) => {
+        return card.id == action.payload.id
+      })(state.cards)
+      let cardsUpdate = R.update(indexToEdit, action.payload, state.cards)
+      return { ...state, cards: cardsUpdate};
     default:
       return state;
   }

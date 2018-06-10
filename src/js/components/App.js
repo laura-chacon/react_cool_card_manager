@@ -92,6 +92,7 @@ class App extends Component {
                 <Form
                     showAddCardForm = {this.state.showAddCardForm || this.state.editCard}
                     editingCard     = {this.state.editCard}
+                    addingCard      = {this.state.showAddCardForm}
                     card            = {this.state.editCard ? this.state.cardToEdit : emptyCard}
                     closeModal      = {() => this.closeModal()}
                 />
