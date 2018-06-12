@@ -26,7 +26,7 @@ class Footer extends Component {
   render() {
       return (
         <StyledFooter style={{backgroundColor: grey[200]}}>
-            <Typography>Made by Laura Chacón. With love ❤️</Typography>
+                <Typography>Made by Laura Chacón. With love ❤️</Typography>
         </StyledFooter>
       )
   }

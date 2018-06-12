@@ -47,6 +47,7 @@ const StyledButton = styled(Button)`
     && {
         position: absolute;
         right: 0;
+        top: 35px;
         margin-right: 16px;
     }
 `;
