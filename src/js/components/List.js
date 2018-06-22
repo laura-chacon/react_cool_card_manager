@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import ListCard from "./Card";
-import Columns from 'react-columns';
+import { connect }          from "react-redux";
+import ListCard             from "./Card";
+import Columns              from 'react-columns';
 
 const mapStateToProps = state => {
   return { cards: state.cards };
@@ -23,7 +22,7 @@ class ConnectedList extends Component {
                 <ListCard
                     key={card.id}
                     card = {card}
-                    onClickEditCard = {(card) => this.props.onClickEditCard(card)}
+                    onClickEditCard = {this.props.onClickEditCard}
                 />
           ))}
         </Columns>
